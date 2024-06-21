@@ -1,0 +1,57 @@
+.navbar{
+  display:flex;
+  box-shadow: rgba(0, 0, 0, .15) 0px -2px 10px 0px;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 2em;
+}
+.brand{
+  font-size: 1.2em;
+}
+.blog{
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.links_list{
+  display: flex;
+  list-style: none;
+}
+.links_list{
+  margin-right: 1em;
+}
+.links_list li a{
+  padding: .4em .6em;
+}
+
+.active {
+  position: relative;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.active::after,
+.active::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Para que a linha apareça logo abaixo do texto */
+  width: 100%;
+  border-bottom: solid 2px black;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.active::before {
+  left: 0;
+}
+
+.active::after {
+  right: 0;
+  transition-delay: 150ms;
+}
+
+.active::before,
+.active::after {
+  transform: scaleX(1);
+}
