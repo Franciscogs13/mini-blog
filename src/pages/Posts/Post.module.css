@@ -1,4 +1,4 @@
-.post_container{
+ .post_container{
   text-align: center;
 }
 .post_container h3{
@@ -19,4 +19,5 @@
 }
 .tags span{
   font-weight: bold;
-}
+} 
+

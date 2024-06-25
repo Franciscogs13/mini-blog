@@ -32,7 +32,7 @@ const Home = () => {
           placeholder="faça a busca usando tags"
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="btn btn_dark">Pesquisar</button>
+        <button className={Styles.btn}>Pesquisar</button>
       </form>
       <div>
         {loading && <p>Carregando</p>}

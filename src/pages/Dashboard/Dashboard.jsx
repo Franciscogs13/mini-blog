@@ -45,21 +45,23 @@ const Dashboard = () => {
               <div key={post.id} className={Styles.post_row}>
                 <p>{post.title}</p>
                 <div>
-                  <Link to={`/posts/${post.id}`} className="btn btn_outline">
-                    Ver
+                  <Link to={`/posts/${post.id}`} >
+                    <button className={Styles.btn}>Ver</button>
                   </Link>
                   <Link
                     to={`/posts/edit/${post.id}`}
-                    className="btn btn_outline"
+                    
                   >
-                    Editar
+                    <button className={Styles.btn}>Editar</button>
                   </Link>
+                  <Link>
                   <button
                     onClick={() => deleteDocument(post.id)}
-                    className="btn btn_outline btn_danger"
+                    className={Styles.btn}
                   >
                     Excluir
                   </button>
+                  </Link>
                 </div>
               </div>
             ))}

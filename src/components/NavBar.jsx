@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 //css
 import Styles from './NavBar.module.css';
@@ -10,17 +10,30 @@ import { useAuthValue } from '../context/authContext';
 const NavBar = () => {
   const { user } = useAuthValue();
   const { logout } = useAutenticacao();
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar se o menu está aberto
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <nav className={Styles.navbar}>
-      <NavLink to="/" className={Styles.brand}>
-        Mini <span className={Styles.blog}>Blog</span>
-      </NavLink>
-      <ul className={Styles.links_list}>
+      <div className={Styles.navbar_container}>
+        <NavLink to="/" className={Styles.brand}>
+          Mini <span className={Styles.blog}>Blog</span>
+        </NavLink>
+        <div className={Styles.menu_icon} onClick={toggleMenu}>
+          <div className={Styles.menu_line}></div>
+          <div className={Styles.menu_line}></div>
+          <div className={Styles.menu_line}></div>
+        </div>
+      </div>
+      <ul className={`${Styles.links_list} ${menuOpen ? Styles.open : ''}`}>
         <li>
           <NavLink
             to="/"
             className={({ isActive }) => isActive ? Styles.active : ''}
+            onClick={toggleMenu} // Fecha o menu ao clicar em um link
           >
             Home
           </NavLink>
@@ -31,6 +44,7 @@ const NavBar = () => {
               <NavLink
                 to="/login"
                 className={({ isActive }) => isActive ? Styles.active : ''}
+                onClick={toggleMenu} // Fecha o menu ao clicar em um link
               >
                 Login
               </NavLink>
@@ -39,6 +53,7 @@ const NavBar = () => {
               <NavLink
                 to="/register"
                 className={({ isActive }) => isActive ? Styles.active : ''}
+                onClick={toggleMenu} // Fecha o menu ao clicar em um link
               >
                 Cadastrar
               </NavLink>
@@ -51,6 +66,7 @@ const NavBar = () => {
               <NavLink
                 to="/posts/create"
                 className={({ isActive }) => isActive ? Styles.active : ''}
+                onClick={toggleMenu} // Fecha o menu ao clicar em um link
               >
                 Novo Post
               </NavLink>
@@ -59,6 +75,7 @@ const NavBar = () => {
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) => isActive ? Styles.active : ''}
+                onClick={toggleMenu} // Fecha o menu ao clicar em um link
               >
                 Dashboard
               </NavLink>
@@ -69,6 +86,7 @@ const NavBar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) => isActive ? Styles.active : ''}
+            onClick={toggleMenu} // Fecha o menu ao clicar em um link
           >
             Sobre
           </NavLink>

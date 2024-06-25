@@ -1,27 +1,35 @@
-.navbar{
-  display:flex;
-  box-shadow: rgba(0, 0, 0, .15) 0px -2px 10px 0px;
+.navbar {
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
   justify-content: space-between;
   align-items: center;
-  padding: .5em 2em;
+  padding: 0.5em 2em;
+  flex-wrap: wrap; /* Adicionado para permitir a quebra de linha em telas menores */
+  height: 50px;
 }
-.brand{
+
+.brand {
   font-size: 1.2em;
 }
-.blog{
+
+.blog {
   font-weight: 900;
   text-transform: uppercase;
 }
 
-.links_list{
+.links_list {
   display: flex;
   list-style: none;
-}
-.links_list{
   margin-right: 1em;
+  flex-wrap: wrap; /* Adicionado para permitir a quebra de linha em telas menores */
 }
-.links_list li a{
-  padding: .4em .6em;
+
+.links_list li {
+  margin-bottom: 0.5em; /* Adicionado para espaçamento entre os itens em telas menores */
+}
+
+.links_list li a {
+  padding: 0.4em 0.6em;
 }
 
 .active {
@@ -37,7 +45,6 @@
   position: absolute;
   bottom: -2px; /* Para que a linha apareça logo abaixo do texto */
   width: 100%;
-  border-bottom: solid 2px black;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
@@ -54,4 +61,115 @@
 .active::before,
 .active::after {
   transform: scaleX(1);
+}
+
+
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_icon {
+  display: none; /* Oculta o ícone do menu por padrão */
+  cursor: pointer;
+}
+
+.menu_icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+.links_list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links_list li {
+  margin-right: 20px;
+}
+/* Media Queries para Responsividade */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1em;
+  }
+
+  .brand {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .links_list {
+    flex-direction: column;
+    margin: 0;
+    align-items: center; /* Centralizar itens da lista em telas menores */
+  }
+
+  .links_list li {
+    margin-bottom: 0.5em;
+  }
+
+  .links_list li a {
+    padding: 0.8em 1em;
+  }
+
+  .menu_icon {
+    display: block; /* Exibe o ícone do menu em telas menores */
+    position: absolute;
+    right:22px;
+    top: 22px;
+  }
+
+  .links_list {
+    display: none; /* Oculta a lista de links por padrão em telas menores */
+    flex-direction: column; /* Ajusta a direção para coluna em telas menores */
+    position: absolute; /* Posiciona a lista absolutamente */
+    top: 60px; /* Ajusta a posição do topo */
+    left: 0;
+    right: 0;
+    background-color: #F6FCFF;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    transition: .4s ease-in-out;
+  }
+
+  .links_list.open {
+    display: flex; /* Exibe a lista de links quando o menu está aberto */
+    transition: .4s ease-in-out;
+  }
+
+  .links_list li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .menu_icon.open .menu_line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu_icon.open .menu_line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu_icon.open .menu_line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+}
+
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1.2em;
+  }
+
+  .links_list li a {
+    padding: 0.6em 0.8em;
+  }
 }

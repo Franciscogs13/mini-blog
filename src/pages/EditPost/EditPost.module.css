@@ -1,20 +1,68 @@
-.edit_post{
+.edit_post {
   text-align: center;
+  padding: 1em; /* Adicionado para espaçamento interno em telas menores */
 }
-.edit_post h2{
+
+.edit_post h2 {
   font-size: 2.2em;
+  margin-bottom: 0.5em; /* Adicionado para espaçamento entre o título e o parágrafo */
 }
-.edit_post p{
+
+.edit_post p {
   color: #aaa;
   margin-bottom: 2em;
+  font-size: 1em; /* Adicionado para ajustar o tamanho da fonte em telas menores */
 }
-.edit_post .preview_title{
-  margin-bottom: .2em;
+
+.edit_post .preview_title {
+  margin-bottom: 0.2em;
   color: #000;
   font-weight: bold;
 }
 
-.img_preview{
+.img_preview {
   max-width: 100%;
   margin-bottom: 1em;
+}
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 768px) {
+  .edit_post {
+    padding: 2em 1em; /* Ajustado para maior espaçamento em tablets */
+  }
+
+  .edit_post h2 {
+    font-size: 2em; /* Reduzido para melhor visualização em tablets */
+    margin-bottom: 0.4em; /* Ajustado para espaçamento */
+  }
+
+  .edit_post p {
+    font-size: 1.2em; /* Aumentado para melhor legibilidade em tablets */
+    margin-bottom: 1.5em; /* Ajustado para espaçamento */
+  }
+
+  .edit_post .preview_title {
+    font-size: 1.2em; /* Aumentado para melhor legibilidade em tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .edit_post {
+    padding: 1.5em 0.5em; /* Ajustado para menor espaçamento em smartphones */
+  }
+
+  .edit_post h2 {
+    font-size: 1.8em; /* Reduzido para melhor visualização em smartphones */
+    margin-bottom: 0.3em; /* Ajustado para espaçamento */
+  }
+
+  .edit_post p {
+    font-size: 1em; /* Mantido o mesmo tamanho para smartphones */
+    margin-bottom: 1em; /* Ajustado para espaçamento */
+  }
+
+  .edit_post .preview_title {
+    font-size: 1em; /* Mantido o mesmo tamanho para smartphones */
+  }
 }

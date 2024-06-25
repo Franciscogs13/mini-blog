@@ -1,15 +1,74 @@
-.about{
+.about {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1em; /* Adicionado para espaçamento interno em telas menores */
 }
-.about p{
+
+.about p {
   color: #AAA;
   margin-bottom: 2em;
+  font-size: 1em; /* Adicionado para ajustar o tamanho da fonte em telas menores */
 }
-.about a{ 
+
+.about a {
   display: block;
   margin-top: 15px;
   padding: 10px 15px;
+  background-color: #f0f0f0; /* Adicionado para destaque do link */
+  border-radius: 5px; /* Adicionado para bordas arredondadas */
+  text-decoration: none; /* Remover sublinhado */
+  color: #333; /* Cor do texto */
+  border-radius: 10px;
+}
+
+.btn{
+  font-weight: bold;
+}
+.btn:hover{
+  background-color: #0F730c;
+  color: white;
+  font-weight: bold;
+}
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 768px) {
+  .about {
+    padding: 2em 1em; /* Ajustado para maior espaçamento em tablets */
+  }
+
+  .about p {
+    font-size: 1.2em; /* Aumentado para melhor legibilidade em tablets */
+    margin-bottom: 1.5em; /* Reduzido para melhor espaçamento em tablets */
+  }
+
+  .about a {
+    padding: 12px 18px; /* Ajustado para maior área clicável em tablets */
+  }
+  .btn{
+    width: 30%;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 1.5em 0.5em; /* Ajustado para menor espaçamento em smartphones */
+  }
+
+  .about p {
+    font-size: 1em; /* Mantido o mesmo tamanho para smartphones */
+    margin-bottom: 1em; /* Reduzido para melhor espaçamento em smartphones */
+  }
+
+  .about a {
+    padding: 10px 15px; /* Mantido o mesmo tamanho para smartphones */
+  }
+  
+  .btn{
+    width: 20%;
+  }
+  
 }

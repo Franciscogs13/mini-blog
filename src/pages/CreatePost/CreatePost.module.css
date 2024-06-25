@@ -1,10 +1,49 @@
-.create_post{
+.create_post {
   text-align: center;
+  padding: 1em; /* Adicionado para espaçamento interno em telas menores */
 }
-.create_post h2{
+
+.create_post h2 {
   font-size: 2.2em;
+  margin-bottom: 0.5em; /* Adicionado para espaçamento entre o título e o parágrafo */
 }
-.create_post p{
+
+.create_post p {
   color: #aaa;
   margin-bottom: 2em;
+  font-size: 1em; /* Adicionado para ajustar o tamanho da fonte em telas menores */
+}
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 768px) {
+  .create_post {
+    padding: 2em 1em; /* Ajustado para maior espaçamento em tablets */
+  }
+
+  .create_post h2 {
+    font-size: 2em; /* Reduzido para melhor visualização em tablets */
+    margin-bottom: 0.4em; /* Ajustado para espaçamento */
+  }
+
+  .create_post p {
+    font-size: 1.2em; /* Aumentado para melhor legibilidade em tablets */
+    margin-bottom: 1.5em; /* Ajustado para espaçamento */
+  }
+}
+
+@media (max-width: 480px) {
+  .create_post {
+    padding: 1.5em 0.5em; /* Ajustado para menor espaçamento em smartphones */
+  }
+
+  .create_post h2 {
+    font-size: 1.8em; /* Reduzido para melhor visualização em smartphones */
+    margin-bottom: 0.3em; /* Ajustado para espaçamento */
+  }
+
+  .create_post p {
+    font-size: 1em; /* Mantido o mesmo tamanho para smartphones */
+    margin-bottom: 1em; /* Reduzido para melhor espaçamento em smartphones */
+  }
 }

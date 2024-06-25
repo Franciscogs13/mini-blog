@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em; /* Adicionado para espaçamento interno em telas menores */
 }
 
 .dashboard h2 {
@@ -14,6 +15,7 @@
 .dashboard p {
   color: #aaa;
   margin-bottom: 1em;
+  font-size: 1em; /* Adicionado para ajustar o tamanho da fonte em telas menores */
 }
 
 .noposts {
@@ -22,10 +24,15 @@
 
 .noposts p {
   margin-bottom: 1.5em;
+  font-size: 1em; /* Adicionado para ajustar o tamanho da fonte em telas menores */
 }
 
 .noposts a {
   padding: 10px 25px;
+  background-color: #f0f0f0; /* Adicionado para destaque do link */
+  border-radius: 5px; /* Adicionado para bordas arredondadas */
+  text-decoration: none; /* Remover sublinhado */
+  color: #333; /* Cor do texto */
 }
 
 .post_header {
@@ -42,8 +49,9 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #eee;
-  width: 80%;
+  width:80%;
   padding: 10px;
+  flex-wrap: wrap; /* Adicionado para permitir quebra de linha em telas menores */
 }
 
 .post_row p {
@@ -51,12 +59,91 @@
   text-align: left;
   display: flex;
   flex-wrap: wrap;
+  margin: 0; /* Remover margem adicional */
 }
 
-.post_row button,
-.post_row a {
-  margin: 0 5px;
+.btn {
+  width: 110%;
+  margin: 5px; /* Ajustado para melhor espaçamento em telas menores */
   height: 30px;
-  width: 100px;
-  font-size: 0.7em;
+  font-size: 0.8em;
+  padding: 10px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  background-color: #E7EBE7;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: #0F730c;
+  color: white;
+  font-weight: bold;
+}
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 2em 1em; /* Ajustado para maior espaçamento em tablets */
+  }
+
+  .dashboard h2 {
+    font-size: 2em; /* Reduzido para melhor visualização em tablets */
+    margin-bottom: 0.4em; /* Ajustado para espaçamento */
+  }
+
+  .dashboard p {
+    font-size: 1.2em; /* Aumentado para melhor legibilidade em tablets */
+    margin-bottom: 1.5em; /* Ajustado para espaçamento */
+  }
+
+  .noposts p {
+    font-size: 1.2em; /* Aumentado para melhor legibilidade em tablets */
+    margin-bottom: 1em; /* Ajustado para espaçamento */
+  }
+
+  .post_header, .post_row {
+    width: 100%; /* Ajustado para ocupar a largura total da tela */
+  }
+
+  .btn {
+    width: 100%; /* Ajustado para ocupar a largura total da tela */
+    margin: 5px 0; /* Ajustado para melhor espaçamento em tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 1.5em 0.5em; /* Ajustado para menor espaçamento em smartphones */
+  }
+
+  .dashboard h2 {
+    font-size: 1.8em; /* Reduzido para melhor visualização em smartphones */
+    margin-bottom: 0.3em; /* Ajustado para espaçamento */
+  }
+
+  .dashboard p {
+    font-size: 1em; /* Mantido o mesmo tamanho para smartphones */
+    margin-bottom: 1em; /* Ajustado para espaçamento */
+  }
+
+  .noposts p {
+    font-size: 1em; /* Mantido o mesmo tamanho para smartphones */
+    margin-bottom: 0.8em; /* Ajustado para espaçamento */
+  }
+
+  .post_header, .post_row {
+    width: 100%; /* Ajustado para ocupar a largura total da tela */
+    flex-direction: column; /* Ajustado para layout em coluna em smartphones */
+    align-items: center; /* Ajustado para alinhar itens ao centro */
+  }
+
+  .btn {
+    width: 100%; /* Ajustado para ocupar a largura total da tela */
+    margin: 5px 0; /* Ajustado para melhor espaçamento em smartphones */
+  }
 }
