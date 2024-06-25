@@ -132,7 +132,7 @@ button[disabled] {
 
 @media (max-width: 480px) {
   form {
-    max-width: 100%; /* Ajustado para ocupar a largura total em smartphones */
+    max-width: 85%; /* Ajustado para ocupar a largura total em smartphones */
   }
 
   label span {

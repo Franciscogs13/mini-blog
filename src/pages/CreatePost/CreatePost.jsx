@@ -65,6 +65,7 @@ const CreatePost = () => {
           <input
             type="text"
             name="title"
+            required
             placeholder="Título do seu post"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
@@ -75,6 +76,7 @@ const CreatePost = () => {
           <input
             type="text"
             name="imagem"
+            required
             placeholder="insira uma imagem"
             onChange={(e) => setImagem(e.target.value)}
             value={imagem}
@@ -96,6 +98,7 @@ const CreatePost = () => {
             type="text"
             name="tags"
             placeholder="Insira as tags separadas por vírgula"
+            required
             onChange={(e) => setTags(e.target.value)}
             value={tags}
           />

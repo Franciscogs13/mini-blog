@@ -138,7 +138,7 @@
 
   .post_header, .post_row {
     width: 100%; /* Ajustado para ocupar a largura total da tela */
-    flex-direction: column; /* Ajustado para layout em coluna em smartphones */
+    flex-direction: row; /* Ajustado para layout em coluna em smartphones */
     align-items: center; /* Ajustado para alinhar itens ao centro */
   }
 
